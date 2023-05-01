@@ -6,7 +6,7 @@ import Constants
 class Ship(pygame.sprite.Sprite):
     def __init__(self):
         super(Ship, self). __init__()
-        self.image = pygame.image.load('spaceshipsmall__1_-removebg-preview.png').convert_alpha()
+        self.image = pygame.image.load('Images/spaceshipsmall__1_-removebg-preview.png').convert_alpha()
         self.image = pygame.transform.scale(self.image, (self.image.get_width()*2/4, self.image.get_height()*2/4))
         self.rect = self.image.get_rect()
         self.rect.x = Constants.DISPLAY_WIDTH / 2 #####
@@ -26,7 +26,7 @@ class Ship(pygame.sprite.Sprite):
         if self.rect.x <= 0:
             self.rect.x = 0
         elif self.rect.x >= Constants.DISPLAY_WIDTH - self.rect.width:
-            self.rect.x =   Constants.DISPLAY_WIDTH
+            self.rect.x =   Constants.DISPLAY_WIDTH - self.rect.width
         self.rect.y += self.vel_y
 
     def shoot(self):
